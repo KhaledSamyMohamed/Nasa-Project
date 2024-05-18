@@ -1,9 +1,9 @@
 name: NASA Project CI
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   build:
     env:
@@ -11,8 +11,8 @@ jobs:
       MONGO_URL: mongodb://localhost/nasa
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
-        mongodb-version: ['4.4']
+        node-version: [14.x, 20.x]
+        mongodb-version: ['6.5']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
